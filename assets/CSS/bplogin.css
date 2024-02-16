@@ -1,0 +1,205 @@
+.App {
+    text-align: center;
+    padding: 256px;
+}
+
+input.idInput {
+    width: 450px;
+    height: 50px;
+    top: 371px;
+    left: 735px;
+    right: 735px;
+    bottom: 659px;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    border-radius: 10px;
+    border: 1px solid #C2C1C1;
+    background-image: url('/assets/images/User.png');
+    background-size: 16px 16px;
+    background-position: 20px center;
+    background-repeat: no-repeat;
+    text-indent: 42px;
+}
+
+input.pwInput {
+    width: 450px;
+    height: 50px;
+    top: 430px;
+    left: 735px;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    border-radius: 10px;
+    border: 1px solid #C2C1C1;
+    background-image: url('/assets/images/Lock.png');
+    background-size: 16px 16px;
+    background-position: 20px center;
+    background-repeat: no-repeat;
+    text-indent: 42px;
+}
+
+.cancelId {
+    width: 16px;
+    height: 16px;
+    border: none;
+    background-image: url('/assets/images/Cancelicon.png');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-color: white;
+    top: 18.5px;
+    right: 160px;
+}
+
+.cancelPw {
+    width: 16px;
+    height: 16px;
+    border: none;
+    background-image: url('/assets/images/Cancelicon.png');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-color: white;
+    position: absolute;
+    top: 19px;
+    right: 160px;
+}
+
+.cancelId:focus {
+    outline: none;
+}
+
+.cancelPw:focus {
+    outline: none;
+}
+
+.idInput:focus {
+    background-image: url('/assets/images/Userclick.png');
+    background-size: 16px 16px;
+    background-position: 20px center;
+    background-repeat: no-repeat;
+    border: 1px solid rgba(80, 138, 168, 1);
+    outline: none;
+}
+
+.pwInput:focus {
+    background-image: url('/assets/images/Lockclick.png');
+    background-size: 16px 16px;
+    background-position: 20px center;
+    background-repeat: no-repeat;
+    border: 1px solid rgba(80, 138, 168, 1);
+    outline: none;
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+.bt:focus-within {
+    background-color: rgba(80, 138, 168, 1);
+}
+
+.bt:hover {
+    background-color: rgba(80, 138, 168, 1);
+}
+
+#logo {
+    padding-bottom: 58.89px;
+    width: 735px;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translate(-49%, -30%);
+}
+
+#ID {
+    padding-bottom: 9px;
+    top: 50%;
+    left: 50%;
+    width: 735px;
+    position: relative;
+    transform: translate(-49%, -50%);
+}
+
+#PW {
+    padding-bottom: 28px;
+    top: 50%;
+    left: 50%;
+    width: 735px;
+    position: relative;
+    transform: translate(-49%, -28px);
+}
+
+#BT {
+    padding-bottom: 28px;
+    top: 50%;
+    left: 50%;
+    width: 735px;
+    position: relative;
+    transform: translate(-49%, -28px);
+}
+
+.idInput,
+.pwInput,
+.bt {
+    outline: none;
+}
+.idInput { 
+    width: 450px;
+    height: 50px;
+    top: 371px;
+    left: 735px;
+    right: 735px;
+    bottom: 659px;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    border-radius: 10px;
+    border: 1px solid #C2C1C1;
+  
+  }
+  
+  .pwInput {
+    width: 450px;
+    height: 50px;
+    top: 430px;
+    left: 735px;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    border-radius: 10px;
+    border: 1px solid #C2C1C1;
+  }
+  
+  
+  .bt {
+    width: 456px;
+    height: 50px;
+    top: 508px;
+    left: 735px;
+    background-color: #a9c5d3;
+    border-radius: 10px;
+    border: #ffffff;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #ffffff;
+    outline: none;
+  }
+  

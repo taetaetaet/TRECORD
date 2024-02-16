@@ -1,0 +1,339 @@
+/* 헤더 바 스타일 */
+.header {
+    height: 40px;
+    background-color: #f8f9fa;
+    color: #212529;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%; 
+    top: 0; 
+    z-index: 1000;
+    box-shadow: 0 4px 4px -4px black; /* 그림자 효과 */
+}
+
+/* 왼쪽 사이드바 스타일 */
+.sidebar {
+    width: 250px;
+    height: 100vh; /* 화면의 높이를 사이드바의 높이로 설정 */
+    background-color: #f0f0f0;
+    float: left;
+    padding: 22px 10px 8px; /* 내용의 여백 설정 */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    position: fixed; /* 고정 위치로 설정 */
+    top: 0; /* 상단에 정렬 */
+    left: 0; /* 왼쪽에 정렬 */
+    bottom: 0; /* 하단에 정렬 */
+}
+
+
+/* 사이드바 링크 스타일 */
+.sidebar span {
+    display: block;
+    margin: 50px 0 4px; /* 링크 간 여백 설정 */
+    padding: 8px 16px; /* 링크 내부 여백 설정 */
+    background-color: #f0f0f0; /* 배경색 */
+    height: 30px;
+    color: #6C757D; /* 글자색 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-size: 19.2px; /* 폰트 크기 설정 */
+}
+
+/* 테스트 링크 스타일 */
+.sidebar a {
+    display: block;
+    height: 30px;
+    margin: 8px 0 0; /* 링크 간 여백 설정 */
+    margin-left: 13px;
+    padding: 0 16px; /* 링크 내부 여백 설정 */
+    color: #212529; /* 글자색 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-size: 16px; /* 폰트 크기 설정 */
+    font-weight: bolder;
+}
+
+.logo {
+    font-size: 24px; /* 로고 텍스트 크기 */
+    font-weight: bold; /* 로고 텍스트 굵기 */
+}
+
+.logo a {
+    text-decoration: none; /* 링크에 밑줄 제거 */
+    color: #20ace4; /* 링크 색상 */
+}
+
+.logo a:hover {
+    color: #007bff; /* 링크에 호버 시 색상 변경 */
+}
+
+/* 오른쪽 메뉴 스타일 */
+.right-menu {
+    display: flex;
+    align-items: center;
+    margin-right: 50px; /* 로그아웃 링크를 오른쪽으로 조금 이동 */
+}
+
+/* 사용자명 스타일 */
+.header-menu {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* 로그아웃 링크 스타일 */
+.logout-link {
+    color: #007bff;
+    text-decoration: none;
+}
+.maintable {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 10px 25px 25px 25px;
+    margin: 40px 0 40px 260px; /* 사이드바의 너비를 고려하여 왼쪽 여백 추가 */
+    text-align: center;
+    right: 0;
+}
+
+.filter-container {
+    margin-bottom: 30px;
+}
+
+.control-count {
+    top: 0;
+    left: 0;
+    width: 40%;
+    padding: 1% 0 1% 0;
+    /* padding: 1%; */
+    /* margin-left: 14.1%; 사이드바의 너비에 따라 조절되도록 수정 */
+    background-color: rgba(255, 255, 255, 0.7);
+    border-bottom-right-radius: 5px;
+    text-align: left;
+    float: left;
+    font-weight: bold;
+}
+.control-filter {
+    top: 0;
+    left: 0;
+    width: 40%;
+    padding: 1% 0 1% 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-bottom-right-radius: 5px;
+    float: right;
+    text-align: right;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 28px;
+    text-align: left; /* 헤더 가운데 정렬 */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3%; 
+}
+audio {
+    width: 300px;
+    height: 15px;
+}
+.box audio {
+    width: 28%;
+    height: 5px;
+    margin-right: 2%; 
+    padding: 1%; 
+}
+
+#download-link {
+    text-decoration: none;
+    color: #fff;
+    padding: 1%;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1.4vw; 
+    text-align: center;
+}
+
+#download-link:hover {
+    background-color: #0056b3;
+}
+
+.pagination {
+    margin-top: 2%;
+    text-align: center; /* 페이지 네이션 가운데 정렬 */
+    margin-left: 7%; /* 사이드바의 너비에 따라 조절되도록 수정 */
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 5px;
+    margin: 0 2px;
+    text-decoration: none;
+    background-color: #f1f3f4;
+    color: #333333;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pagination a:hover {
+    background-color: #dddddd;
+}
+
+th {
+    background-color: #f1f3f4;
+}
+
+.tr {
+    box-shadow: 0 0 1px 0 rgb(114, 106, 106);  
+    height: 16px;
+}
+#tb-result:hover{
+    background-color: #f1f3f4;
+    
+}
+
+.date-search-form {
+    margin-bottom: 1%; 
+    text-align: left;
+}
+
+.call-type-form {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.call-types {
+    text-align: center;
+    width: 76px;
+    height: 37px;
+}
+
+.call-number {
+    width: 310px; 
+    height: 35px;
+    text-align: left;
+    font-size: 16px;
+    border: 1px solid grey;
+    padding: 0;
+}
+
+.audio-controls {
+    display: flex;
+    height: 16px;
+    align-items: center;
+}
+
+.download-link {
+    margin-left: 2%; 
+    color: #007bff;
+    text-decoration: none;
+}
+
+.download-link:hover {
+    text-decoration: underline;
+}
+
+#search-btn {
+    margin-left: 1%; 
+    width: 45px;
+    height: 33px;
+}
+#filter-btn {
+    margin-left: 1%; 
+    width: 45px;
+    height: 37px;
+}
+
+.search-date-end {
+    margin-left: 1%; 
+}
+
+.search-now-day {
+    margin-left: 0.5%; 
+}
+
+.search-title {
+    font-weight: bold;
+    margin-right: 1%; 
+}
+
+.call-title {
+    font-weight: bold;
+    margin-right: 1%; 
+}
+
+.input-start {
+    text-align: center;
+    width: 150px; 
+    height: 28px;
+    font-size: 15px;
+    padding: 0;
+    border: 1px solid grey;
+}
+
+.input-end {
+    text-align: center;
+    width: 150px; 
+    height: 28px;    
+    font-size: 15px;
+    padding: 0;
+    border: 1px solid grey;
+}
+
+.calendar {
+    width: 3%; 
+    height: 38px;
+}
+
+.limit-filter {
+    height: 31px;
+    text-align: center;
+    font-size: 14px;
+}
+.sort-filter {
+    height: 31px;
+    text-align: center;
+    font-size: 14px;
+}
+.datepicker-icon {
+    vertical-align: middle;
+}
+body {
+    font-size: 16px; /* 전체 폰트 크기 조정 */
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px;
+    
+}
+td{
+    background-color: #fff;
+}
+th {
+    background-color: #f1f3f4;
+    font-size: 14px; /* 테이블 헤더 폰트 크기 조정 */
+}
+tr:hover{
+    background-color: #f1f3f4;
+}
