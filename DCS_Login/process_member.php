@@ -1,5 +1,6 @@
 <?php
 $database_file = "..\DCS_DB\DCS_database.db";
+// $database_file = "..\DCS_DB\database.db";
 // 데이터베이스 연결
 $db_connection = new SQLite3($database_file);
 // 연결 확인
@@ -13,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["user_id"];
     $password = $_POST["user_pw"];
     $exNumber = $_POST["ex_number"];
+    $teamName = $_POST["team_name"];
     $isAdmin = $_POST["admin"];
     $accessType = $_POST["query_type"];
     $canListen = $_POST["listening"];
@@ -20,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $isActive = $_POST["usage"];
 
     // 아이디 중복 체크
-    $checkQuery = "SELECT COUNT(*) AS count FROM Members WHERE user_id='$username'";
+    $checkQuery = "SELECT COUNT(*) AS count FROM Members1 WHERE user_id='$username'";
     $checkResult = $db_connection->querySingle($checkQuery);
 
     if ($checkResult > 0) {
@@ -29,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     } else {
         // 중복되지 않은 경우, INSERT 쿼리 실행
-        $insertQuery = "INSERT INTO Members (user_id, user_pw, ex_Number, isAdmin, accessType, canListen, canDownload, isActive, create_day) 
-                        VALUES ('$username', '$password', '$exNumber', '$isAdmin', '$accessType', '$canListen', '$canDownload', '$isActive', date('now'))";
+        $insertQuery = "INSERT INTO Members1 (user_id, user_pw, ex_Number, teamName, isAdmin, accessType, canListen, canDownload, isActive, create_day) 
+                        VALUES ('$username', '$password', '$exNumber', '$teamName', '$isAdmin', '$accessType', '$canListen', '$canDownload', '$isActive', date('now'))";
         echo "<script>  window.location.href = 'process_member.php?userID=<?php echo $userID; ?>';</script>";
 
         if (!$db_connection->exec($insertQuery)) {
@@ -108,6 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <th>아이디</th>
                     <th>비밀번호</th>
                     <th>내선번호</th>
+                    <th>소속 부서</th>
                     <th>관리자 여부</th>
                     <th>조회 구분</th>
                     <th>청취 여부</th>
@@ -119,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <tbody>
                 <?php
                 // 회원 정보를 데이터베이스에서 가져와 출력
-                $selectQuery = "SELECT * FROM Members";
+                $selectQuery = "SELECT * FROM Members1";
                 $result = $db_connection->query($selectQuery);
 
                 if ($result->numColumns() > 0) {
@@ -129,6 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         echo "<td>" . $row["user_id"] . "</td>";
                         echo "<td>" . $row["user_pw"] . "</td>";
                         echo "<td>" . $row["ex_number"] . "</td>";
+                        echo "<td>" . ($row["teamName"] ? "관리팀" : "개발팀") . "</td>";
                         echo "<td>" . ($row["isAdmin"] ? "관리자" : "일반 사용자") . "</td>";
                         echo "<td>" . ($row["accessType"] ? "전체" : "본인") . "</td>";
                         echo "<td>" . ($row["canListen"] ? "가능" : "불가능") . "</td>";
@@ -178,6 +182,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label for="ex_number">내선번호</label>
                         <input type="text" class="form-control" id="ex_number" name="ex_number" placeholder="내선번호 입력" required>
 
+                    </div>
+
+                       <!-- 부서 여부 -->
+                       <div class="form-group col" id="teamName">
+                        <label for="team_name">소속 부서</label>
+                        <select class="form-control" id="team_name" name="team_name" required>
+                            <option value="">선택</option>
+                            <option value="2">관리팀</option>
+                            <option value="0">개발팀</option>
+                        </select>
                     </div>
 
                     <!-- 관리자 여부 -->
@@ -274,6 +288,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label for="edit_ex_number">새로운 내선번호</label>
                         <input type="text" class="form-control" id="edit_ex_number" name="ex_number" placeholder="새로운 내선번호 입력">
                         <small id="edit_exnumber_error" class="error-message"></small> <!-- 내선번호 입력 안내 메시지 -->
+                    </div>
+                         <!-- 부서 여부 -->
+                         <div class="form-group col" id="teamName">
+                        <label for="team_name">소속 부서</label>
+                        <select class="form-control" id="team_name" name="team_name" required>
+                            <option value="">선택</option>
+                            <option value="2">관리팀</option>
+                            <option value="1">영업팀</option>
+                            <option value="0">개발팀</option>
+                        </select>
                     </div>
                     <!-- 관리자 여부 -->
                     <div class="form-group col" id="edit_useradmin">

@@ -143,11 +143,6 @@ $result = $DB->query($query);
 
 ?>
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="ko">
 

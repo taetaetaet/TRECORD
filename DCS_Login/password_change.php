@@ -19,7 +19,7 @@ $dbFile = "..\DCS_DB\DCS_database.db";
 $db = new SQLite3($dbFile);
 
 // 사용자 아이디를 이용하여 DB에서 기존 비밀번호 가져오기
-$query = $db->prepare("SELECT user_pw FROM Members WHERE user_id = :user_id");
+$query = $db->prepare("SELECT user_pw FROM Members1 WHERE user_id = :user_id");
 $query->bindValue(':user_id', $userID, SQLITE3_TEXT);
 $result = $query->execute();
 
@@ -31,7 +31,7 @@ if ($row = $result->fetchArray(SQLITE3_ASSOC)) {
     // 비밀번호 일치 여부 확인
     if ($currentPassword === $plainPasswordFromDB) {
         // 비밀번호가 일치하는 경우, 새 비밀번호를 데이터베이스에 업데이트
-        $updateQuery = $db->prepare("UPDATE Members SET user_pw = :password WHERE user_id = :user_id");
+        $updateQuery = $db->prepare("UPDATE Members1 SET user_pw = :password WHERE user_id = :user_id");
         $updateQuery->bindValue(':password', $newPassword, SQLITE3_TEXT);
         $updateQuery->bindValue(':user_id', $userID, SQLITE3_TEXT);
         

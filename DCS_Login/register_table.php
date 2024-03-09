@@ -3,11 +3,12 @@
 $DB = new SQLite3('..\DCS_DB\DCS_database.db');
 
 // Login 테이블 생성 쿼리
-$query = "CREATE TABLE IF NOT EXISTS Members (
+$query = "CREATE TABLE IF NOT EXISTS Members1 (
     seq INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id TEXT NOT NULL,
     user_pw TEXT NOT NULL,
     ex_number TEXT NOT NULL,
+    teamName INTEGER NOT NULL DEFAULT 0,
     isAdmin INTEGER NOT NULL DEFAULT 0,
     accessType TEXT NOT NULL,
     canListen INTEGER NOT NULL DEFAULT 0,
@@ -24,10 +25,10 @@ if ($DB->exec($query)) {
 }
 
 // 관리자 계정이 없는 경우에만 추가
-$result = $DB->querySingle("SELECT COUNT(*) FROM Members WHERE user_id = 'admin'");
+$result = $DB->querySingle("SELECT COUNT(*) FROM Members1 WHERE user_id = 'admin'");
 if ($result == 0) {
-    $insertQuery = "INSERT INTO Members (user_id, user_pw, ex_number, isAdmin, accessType, canListen, canDownload, isActive, create_day)
-                     VALUES ('admin', '1234', '0000', '1', '1', '1', '1', '1', date('now'))";
+    $insertQuery = "INSERT INTO Members1 (user_id, user_pw, ex_number, teamName, isAdmin, accessType, canListen, canDownload, isActive, create_day)
+                     VALUES ('admin', '1234', '0000', '1', '1', '1', '1', '1', '1', date('now'))";
     if ($DB->exec($insertQuery)) {
        
     }

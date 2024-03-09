@@ -14,7 +14,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/CSS/bplogin.css">
+    <link rel="stylesheet" href="../assets/CSS/bplogin.css">
     <title>DCS 녹음 청취 페이지</title>
     <script>
         function validateInput(inputElement) {
@@ -68,7 +68,7 @@ $conn->close();
         <div id="logo">
             <?php
                 // PHP에서 동적으로 경로 생성
-                $imagePath = '/assets/images/bpLogo.png';
+                $imagePath = '../assets/images/bpLogo.png';
                 echo '<img src="' . $imagePath . '" alt="">';
             ?>
         </div>

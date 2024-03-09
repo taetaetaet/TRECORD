@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     $pw = $_POST["pwInput"];
 
     // 사용자 조회를 위한 쿼리
-    $query = "SELECT * FROM Members WHERE user_id=:user_id";
+    $query = "SELECT * FROM Members1 WHERE user_id=:user_id";
     $stmt = $conn->prepare($query);
     $stmt->bindValue(':user_id', $id);
     $result = $stmt->execute();

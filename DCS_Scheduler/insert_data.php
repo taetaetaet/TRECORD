@@ -88,10 +88,9 @@ if (!empty($values)) {
     $query = "INSERT INTO \"DCS\" ('balsin_number', 'susin_number', 'start_time', 'end_time', 'call_time', 'file_dir', 'file_names', 'ext_type', 'crtime') ";
     $query .= "VALUES " . implode(', ', $values);
     $DB->exec($query);
+    echo $DB;
+    exit;
 }
-
-
-
         closedir($handleDir);
     }
 

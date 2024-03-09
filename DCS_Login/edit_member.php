@@ -14,6 +14,7 @@
 $user_id = $_POST["user_id"];
 $user_pw = $_POST["user_pw"];
 $ex_number = $_POST["ex_number"];
+$teamName = $_POST["team_name"];
 $admin = $_POST["admin"];
 $query_type = $_POST["query_type"];
 $listening = $_POST["listening"];
@@ -22,7 +23,8 @@ $usage = $_POST["usage"];
 
 
 // 데이터베이스에서 해당 아이디의 회원 정보 업데이트
-$updateQuery = "UPDATE Members SET user_pw='$user_pw', ex_number='$ex_number', isAdmin='$admin', accessType='$query_type', canListen='$listening', canDownload='$downloading', isActive='$usage' WHERE user_id='$user_id'";
+$updateQuery = "UPDATE Members1 SET user_pw='$user_pw', ex_number='$ex_number', teamName='$teamName', isAdmin='$admin', accessType='$query_type',
+ canListen='$listening', canDownload='$downloading', isActive='$usage' WHERE user_id='$user_id'";
 
 // 쿼리 실행
 $result = $db_connection->exec($updateQuery);
